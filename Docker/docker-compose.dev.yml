@@ -1,0 +1,14 @@
+# Make sure .env.production file is in root directory of project
+# Run this: docker-compose -f docker/docker-compose.dev.yml up --build -d up (in root directory)
+
+version: '3'
+
+services:
+  app:
+    container_name: flexibble-container
+    image: flexibble
+    build:
+      context: ..
+      dockerfile: Docker/Dockerfile.dev
+    ports:
+      - 3000:3000
